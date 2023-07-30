@@ -101,7 +101,7 @@ class Index
 }
 
 ```
-依赖注入方式
+依赖注入方式，推荐
 ```php
 use isszz\sensitive\Sensitive;
 
