@@ -1,0 +1,32 @@
+{
+    "name": "isszz/webman-sensitive",
+    "description": "Webman 敏感词检测，过滤，标记",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "isszz",
+            "email": "isszz@qq.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.0.0",
+        "workerman/webman-framework": ">=1.4"
+    },
+    "autoload": {
+        "files": [
+            "src/helpers.php"
+        ],
+        "psr-4": {
+            "isszz\\sensitive\\": "src"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "dev-dev"
+        }
+    }
+}
