@@ -21,7 +21,7 @@ class HashMap
 	 */
 	public function put($key, $value)
 	{
-		if (! array_key_exists($key, $this->hashTable)) {
+		if (! $this->containsKey($key)) {
 			$this->hashTable[$key] = $value;
 			return null;
 		}
@@ -40,7 +40,7 @@ class HashMap
 	 */
 	public function get($key)
 	{
-		if (array_key_exists($key, $this->hashTable)) {
+		if ($this->containsKey($key)) {
 			return $this->hashTable[$key];
 		}
 
@@ -55,7 +55,7 @@ class HashMap
 	 */
 	public function remove($key)
 	{
-		if (array_key_exists($key, $this->hashTable)) {
+		if ($this->containsKey($key)) {
 			$tempTable = [];
 			$tempValue = $this->hashTable[$key];
 	        foreach ($this->hashTable as $k => $v) {
@@ -145,11 +145,7 @@ class HashMap
 	 */
 	public function containsKey($key)
 	{
-		if (array_key_exists($key, $this->hashTable)) {
-			return true;
-		} else {
-			return false;
-		}
+        return array_key_exists($key, $this->hashTable);
 	}
 
 	/**
