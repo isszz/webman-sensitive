@@ -161,9 +161,7 @@ class Sensitive
             throw new SensitiveException('Please fill in the content of the test', 1);
         }
 
-        if(!$replaceChar) {
-        	$replaceChar = $this->config['replaceChar'] ?? '';
-        }
+        $replaceChar = $replaceChar ?: $this->config['replace_char'];
 
         if(!$repeat) {
         	$repeat = $this->config['repeat'] ?? false;

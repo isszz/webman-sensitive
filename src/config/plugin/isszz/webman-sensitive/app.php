@@ -8,7 +8,7 @@ return [
     'mode' => 'file', 
     'config' => [
         'repeat' => true, // 重复替换为敏感词相同长度的字符
-        'replaceChar' => '*', // 替换字符
+        'replace_char' => '*', // 替换字符
         // 标记敏感词，标签生成<mark>敏感词</mark>
         'mark' => 'mark', 
     ],
