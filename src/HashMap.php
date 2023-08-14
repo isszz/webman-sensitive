@@ -21,7 +21,7 @@ class HashMap
 	 */
 	public function put($key, $value)
 	{
-		if (!$this->containsKey($key)) {
+		if (! $this->containsKey($key)) {
 			$this->hashTable[$key] = $value;
 			return null;
 		}
@@ -145,7 +145,7 @@ class HashMap
 	 */
 	public function containsKey($key)
 	{
-		return array_key_exists($key, $this->hashTable);
+        return array_key_exists($key, $this->hashTable);
 	}
 
 	/**
