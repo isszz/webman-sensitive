@@ -555,10 +555,14 @@ class Sensitive
 		if (!$handle) {
 			throw new SensitiveException('Read file failed', 4);
 		}
+		
+        while (!feof($handle)) {
+            if ($line = fgets($handle) and $line === false) {
+                continue;
+            }
 
-		while (!feof($handle)) {
-			yield str_replace(['\'', ' ', PHP_EOL, ','], '', fgets($handle));
-		}
+            yield str_replace(['\'', ' ', PHP_EOL, ','], '', $line);
+        }
 
 		fclose($handle);
 	}
