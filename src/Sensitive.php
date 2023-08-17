@@ -557,7 +557,7 @@ class Sensitive
 		}
 		
         while (!feof($handle)) {
-            if ($line = fgets($handle) and $line === false) {
+            if ($line = fgets($handle) and !is_string($line)) {
                 continue;
             }
 
